@@ -1,4 +1,4 @@
-NAME	=	fractol.k	
+NAME	=	push_swap	
 RM		=	rm -rf
 
 all:		$(NAME)

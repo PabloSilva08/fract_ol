@@ -1,26 +1,25 @@
-SRCS	=	main.c help.c init_frac.c fractol_mandelbrot.c fractol_julia.c\
-			fractol_burning_ship.c error.c events_mouse.c events_key.c
+SRCS	=	main.c
 PREFD	=	$(addprefix ./obj/, $(SRCS))
 OBJF	=	$(PREFD:.c=.o)
 SRCPATH	=	./src/
 OBJPATH	=	./obj/
 OB		=	./obj
 INCPATH	=	./include/
-NAME	=	fractol.x	
+NAME	=	push_swap.x	
 CC		= 	cc
 RM		=	rm -f
-CFLAGS 	= 	-Wall -Wextra -Werror -Ofast 
+CFLAGS 	= 	-Wall -Wextra -Werror  
 AR 		=	ar -rcs
 RM		=	rm -rf
 
 $(OBJPATH)%.o: $(SRCPATH)%.c 
-			$(CC) $(CFLAGS) -I$(INCPATH) -Imlx -c $< -o $@
+			$(CC) $(CFLAGS) -I$(INCPATH) -c $< -o $@
 
 all:		$(NAME)
 
 $(NAME): 	$(OB) $(OBJF)
 			make -C ../ft_printf
-			$(CC) $(CFLAGS) $(OBJF) -L../ft_printf/ -lftprintf  -L./minilibx_opengl/ -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+			$(CC) $(CFLAGS) $(OBJF) -L../ft_printf/ -lftprintf -o $(NAME)
 
 $(OB):		
 			mkdir obj
