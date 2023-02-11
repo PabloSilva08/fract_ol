@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   push.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 11:37:47 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/01/24 16:07:46 by pvieira-         ###   ########.fr       */
+/*   Created: 2023/02/11 13:17:38 by pvieira-          #+#    #+#             */
+/*   Updated: 2023/02/11 14:38:30 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#ifndef PUSH_H
+# define PUSH_H
+# include "../../ft_printf/include/ft_printf.h"
+# include <stdlib.h>
 
-void	something_went_wrong(void)
+typedef struct s_list
 {
-	perror("error");
-	exit(errno);
-}
+	int		number;
+	int		index;
+	t_list	next;
+}				t_list;
+
+
+#endif
