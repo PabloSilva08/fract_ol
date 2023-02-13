@@ -1,4 +1,4 @@
-SRCS	=	main.c
+SRCS	=	main.c validation_push.c
 PREFD	=	$(addprefix ./obj/, $(SRCS))
 OBJF	=	$(PREFD:.c=.o)
 SRCPATH	=	./src/
@@ -8,7 +8,7 @@ INCPATH	=	./include/
 NAME	=	push_swap.x	
 CC		= 	cc
 RM		=	rm -f
-CFLAGS 	= 	-Wall -Wextra -Werror  
+CFLAGS 	= 	-g -Wall -Wextra -Werror  
 AR 		=	ar -rcs
 RM		=	rm -rf
 

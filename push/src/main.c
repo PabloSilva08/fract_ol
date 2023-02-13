@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:15:02 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/02/11 13:16:24 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:05:48 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 int	main(int argc, char **argv)
 {
+	if (argc > 1)
+	{
+		validation_push(argc, argv);
 
+	}
+	return (0);
 }
