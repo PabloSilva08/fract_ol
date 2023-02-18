@@ -1,4 +1,4 @@
-SRCS	=	main.c validation_push.c
+SRCS	=	main.c validation_push.c validation_push_2.c
 PREFD	=	$(addprefix ./obj/, $(SRCS))
 OBJF	=	$(PREFD:.c=.o)
 SRCPATH	=	./src/

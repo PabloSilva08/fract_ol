@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   validation_push_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 13:17:38 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/02/18 13:22:19 by pvieira-         ###   ########.fr       */
+/*   Created: 2023/02/18 12:43:44 by pvieira-          #+#    #+#             */
+/*   Updated: 2023/02/18 13:26:02 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_H
-# define PUSH_H
-# include "../../ft_printf/include/ft_printf.h"
-# include <stdlib.h>
+#include "push.h"
 
-typedef struct s_list_push
+void	checking_digits(char *arg)
 {
-	int		number;
-	int		index;
-	t_list	next;
-}				t_l_push;
+	int	i;
 
-void	validation_push(int argc, char **argv);
-void	something_arg_error(void);
-void	checking_digits(char *arg);
-void	checking_limits(char *arg);
-#endif
+	i = 0;
+	while (arg[i] != '\0')
+	{
+		if (arg[i] == '+' || arg[i] == '-')
+			i++;
+		if (ft_isdigit(arg[i]) == 0)
+			something_arg_error();
+		i++;
+	}
+}
+
+void	checking_limits(char *arg)
+{
+
+	if (ft_strlen(arg) > 11)
+		something_arg_error();
+		
+}

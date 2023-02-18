@@ -6,34 +6,54 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 10:09:40 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/02/13 17:20:57 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:40:47 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-//static	void	something_arg_error(void)
-//{
-//	ft_printf("Error\n");
-//	exit(22);
-//}
+void	something_arg_error(void)
+{
+	ft_printf("Error\n");
+	exit(22);
+}
 
-static	void	validation_number(int argc, char **argv)
+static	void	validation_number(unsigned int arg_number, char **split_arg)
 {
 	unsigned int	i;
-//f (ft_atoi(argv[i]) < -2147483648 || ft_atoi(argv[i]) > 2147483647)
-	i = 1
-	while (i < argc)
+
+	i = 0;
+	if (arg_number < 2) // acertar para caso seja passado somente um sinal e dar Error
 	{
+		checking_digits(split_arg[0]);
+		checking_limits(split_arg[0]);
+		//estou aqui acertando a validaçao apra 1 argumento
 
 	}
+		exit (0);
+	while (split_arg[i] != NULL)
+	{
+		checking_digits(split_arg[i]);
+		checking_limits(split_arg[i]);
+		i++;
+	}
+}
+
+static	unsigned int	count_arg(char **split_arg)
+{
+	unsigned int	count;
+
+	count = 0;
+	while (split_arg[count] != NULL)
+		count++;
+	return (count);
 }
 
 static	char	*joining_arguments(int argc, char **argv)
 {
-	unsigned int	i;
-	char			*arg_new;
-	char			*temp;
+	 int	i;
+	char	*arg_new;
+	char	*temp;
 
 	i = 1;
 	arg_new = ft_strdup("");
@@ -55,35 +75,26 @@ static	char	*joining_arguments(int argc, char **argv)
 
 void	validation_push(int argc, char **argv)
 {
-	char	*one_arg;
-	char	**split_arg;
-//	long	**arg_int;
-//	int		i;
+	char				*one_arg;
+	char				**split_arg;
+	unsigned int		arg_number;
+	int		i;
 
-//	i = 0;
+	i = 0;
 
-	validation_number(argc, argv);
 	one_arg = joining_arguments(argc, argv);
 	split_arg = ft_split(one_arg, ' ');
 	free(one_arg);
-
-/* ----------------Bloco de teste------------------------------------
+	arg_number = count_arg(split_arg);
+	ft_printf("arg_number = %d\n\n", arg_number);
+	validation_number(arg_number, split_arg);
+//}
+// ----------------Bloco de teste------------------------------------
 	while (split_arg[i] != NULL)
 	{
 		ft_printf("split_arg[%d] = %s\n",i ,split_arg[i]);
 		i++;
 	}
-	i = 0;
 	ft_printf("\n\n");
 }
-----------------Bloco de teste------------------------------------*/
-
-/*	while (argv[i])
-	{
-		if (argv[i] < '0' || argv[i] > '9')
-			something_arg_error();
-		if (ft_atoi(argv[i]) < -2147483648 || ft_atoi(argv[i]) > 2147483647)
-			something_arg_error();
-		i++;
-	}
-	*/
+//----------------Bloco de teste------------------------------------
