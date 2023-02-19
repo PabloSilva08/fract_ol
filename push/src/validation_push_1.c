@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation_push.c                                  :+:      :+:    :+:   */
+/*   validation_push_1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 10:09:40 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/02/18 13:40:47 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/02/19 11:10:38 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,12 @@ static	void	validation_number(unsigned int arg_number, char **split_arg)
 	unsigned int	i;
 
 	i = 0;
-	if (arg_number < 2) // acertar para caso seja passado somente um sinal e dar Error
+	if (arg_number < 2)
 	{
 		checking_digits(split_arg[0]);
 		checking_limits(split_arg[0]);
-		//estou aqui acertando a validaçao apra 1 argumento
-
-	}
 		exit (0);
+	}
 	while (split_arg[i] != NULL)
 	{
 		checking_digits(split_arg[i]);
@@ -51,7 +49,7 @@ static	unsigned int	count_arg(char **split_arg)
 
 static	char	*joining_arguments(int argc, char **argv)
 {
-	 int	i;
+	int		i;
 	char	*arg_new;
 	char	*temp;
 
@@ -75,13 +73,12 @@ static	char	*joining_arguments(int argc, char **argv)
 
 void	validation_push(int argc, char **argv)
 {
-	char				*one_arg;
-	char				**split_arg;
-	unsigned int		arg_number;
-	int		i;
+	char			*one_arg;
+	char			**split_arg;
+	unsigned int	arg_number;
+	int				i;
 
 	i = 0;
-
 	one_arg = joining_arguments(argc, argv);
 	split_arg = ft_split(one_arg, ' ');
 	free(one_arg);
