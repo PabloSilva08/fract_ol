@@ -6,35 +6,36 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 10:09:40 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/02/19 11:10:38 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:55:10 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-void	something_arg_error(void)
-{
-	ft_printf("Error\n");
-	exit(22);
-}
-
-static	void	validation_number(unsigned int arg_number, char **split_arg)
+static	void	validation_number(unsigned int argc_n, char **split_arg)
 {
 	unsigned int	i;
+	int				*lst;
 
 	i = 0;
-	if (arg_number < 2)
-	{
-		checking_digits(split_arg[0]);
-		checking_limits(split_arg[0]);
-		exit (0);
-	}
 	while (split_arg[i] != NULL)
 	{
 		checking_digits(split_arg[i]);
-		checking_limits(split_arg[i]);
 		i++;
 	}
+	lst = malloc(sizeof(int) * argc_n);
+	if (!lst)
+		erro_malloc_push(8812);
+	i = 0;
+	while (i < argc_n)
+	{
+		lst[i] = ft_atoli(split_arg[i]);
+		i++;
+	}
+	checking_repeat(lst, argc_n);
+	if (argc_n == 1)
+		exit(80);
+	free(lst);
 }
 
 static	unsigned int	count_arg(char **split_arg)
@@ -71,27 +72,14 @@ static	char	*joining_arguments(int argc, char **argv)
 	return (arg_new);
 }
 
-void	validation_push(int argc, char **argv)
+t_arg	validation_push(int argc, char **argv)
 {
-	char			*one_arg;
-	char			**split_arg;
-	unsigned int	arg_number;
-	int				i;
+	t_arg	arg;
 
-	i = 0;
-	one_arg = joining_arguments(argc, argv);
-	split_arg = ft_split(one_arg, ' ');
-	free(one_arg);
-	arg_number = count_arg(split_arg);
-	ft_printf("arg_number = %d\n\n", arg_number);
-	validation_number(arg_number, split_arg);
-//}
-// ----------------Bloco de teste------------------------------------
-	while (split_arg[i] != NULL)
-	{
-		ft_printf("split_arg[%d] = %s\n",i ,split_arg[i]);
-		i++;
-	}
-	ft_printf("\n\n");
+	arg.union_arg = joining_arguments(argc, argv);
+	arg.split_arg = ft_split(arg.union_arg, ' ');
+	free(arg.union_arg);
+	arg.argc_n = count_arg(arg.split_arg);
+	validation_number(arg.argc_n, arg.split_arg);
+	return (arg);
 }
-//----------------Bloco de teste------------------------------------
