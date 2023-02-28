@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:34:39 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/02/20 22:38:47 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/02/20 22:56:09 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@ void	push_swap(t_arg *arg)
 		i++;
 	}
 
+//-------------------------Bloco de teste--------------------------------
 	while (a->next != NULL)
 	{
 		ft_printf("a->number = %d\n", a->number);
 		a = a->next;
 	}
 	ft_printf("a->number = %d\n", a->number);
-
+//-------------------------Bloco de teste--------------------------------
 
 }
