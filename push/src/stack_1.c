@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:42:19 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/02/28 11:26:29 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/04 07:14:06 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,4 @@ void	stk_add_back(t_stk **s, t_stk *new)
 			tmp = tmp->next;
 		tmp->next = new;
 	}
-
-//	if ((*s)->next == NULL)
-//		(*s)->next = new;
-//	else
-//	{
-//		tmp = *s;
-//		while (tmp->next != NULL)
-//			tmp = tmp->next;
-//		tmp->next = new;
-//	}
 }
