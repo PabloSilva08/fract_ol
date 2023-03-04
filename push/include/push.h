@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:17:38 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/04 14:59:41 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/04 19:47:45 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int		ft_atoli(const char *str);
 t_stk	*new_node(int number);
 t_stk	*stk_last(t_stk *s);
 void	stk_add_back(t_stk **s, t_stk *new);
-void	swap_a(t_stk **a);
-
+void	ft_sa(t_stk **a);
+void	ft_sb(t_stk **b);
+void	ft_ss(t_stk **a, t_stk **b);
+int		stk_size(t_stk *s);
 #endif

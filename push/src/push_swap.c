@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:34:39 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/04 16:52:44 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/04 19:51:12 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,14 @@ static	void	indexing_stk(t_stk **a, t_arg *arg)
 void	push_swap(t_arg *arg)
 {
 	t_stk	*a;
+	t_stk	*b;
 
 	a = NULL;
+	b = NULL;
 	a = creating_stk(a, arg);
 	indexing_stk(&a, arg);
-	swap_a(&a);
+	ft_sa(&a);
+	ft_sa(&b);
 
 
 

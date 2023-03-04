@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:42:19 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/04 12:15:55 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/04 19:47:07 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,19 @@ void	stk_add_back(t_stk **s, t_stk *new)
 		tmp = stk_last(*s);
 		tmp->next = new;
 	}
+}
+
+int	stk_size(t_stk *s)
+{
+	unsigned int	count;
+
+	count = 1;
+	if (s == NULL)
+		return (0);
+	while (s->next != NULL)
+	{
+		count++;
+		s = s->next;
+	}
+	return (count);
 }
