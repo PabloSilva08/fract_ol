@@ -6,11 +6,27 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:34:39 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/04 08:00:38 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:52:44 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
+
+static t_stk *creating_stk(t_stk *a, t_arg *arg)
+{
+	t_stk			*tmp;
+	unsigned int	i;
+
+	tmp = NULL;
+	i = 0;
+	while (i < arg->argc_n)
+	{
+		tmp = new_node(ft_atoli(arg->split_arg[i]));
+		stk_add_back(&a, tmp);
+		i++;
+	}
+	return (a);
+}
 
 static	void	indexing_stk(t_stk **a, t_arg *arg)
 {
@@ -41,33 +57,35 @@ static	void	indexing_stk(t_stk **a, t_arg *arg)
 
 void	push_swap(t_arg *arg)
 {
-	t_stk			*a;
-	t_stk			*tmp;
-	unsigned int	i;
+	t_stk	*a;
 
 	a = NULL;
-	tmp = NULL;
-	i = 0;
-	while (i < arg->argc_n)
-	{
-		tmp = new_node(ft_atoli(arg->split_arg[i]));
-		stk_add_back(&a, tmp);
-		i++;
-	}
+	a = creating_stk(a, arg);
 	indexing_stk(&a, arg);
+	swap_a(&a);
+
+
+
+
+
+
+
+
+
 
 //-------------------------Bloco de teste--------------------------------
 	ft_printf("\n-------------------------------------\n");
-	while (a->next != NULL)
+	int	i = 0;
+	while (a != NULL)
 	{
+		//ft_printf("a->number = %d\n", a->number);
+		ft_printf("%p Node[%i]\n", &a->number, i++);
 		ft_printf("a->number = %d\n", a->number);
 		ft_printf("a->index = %d\n", a->index);
+		ft_printf("a->next = %p\n", a->next);
 		ft_printf("-------------------------------------\n\n");
 		a = a->next;
 	}
-	ft_printf("a->number = %d\n", a->number);
-	ft_printf("a->index = %d\n", a->index);
-	ft_printf("-------------------------------------\n\n");
 //-------------------------Bloco de teste--------------------------------
 
 }

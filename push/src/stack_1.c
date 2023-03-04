@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:42:19 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/04 07:14:06 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/04 12:15:55 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,15 @@ t_stk	*new_node(int number)
 	return (node);
 }
 
+t_stk *stk_last(t_stk *s)
+{
+	if (s == NULL)
+		return (NULL);
+	while (s->next != NULL)
+		s = s->next;
+	return (s);
+}
+
 void	stk_add_back(t_stk **s, t_stk *new)
 {
 	t_stk	*tmp;
@@ -33,9 +42,7 @@ void	stk_add_back(t_stk **s, t_stk *new)
 		*s = new;
 	else
 	{
-		tmp = *s;
-		while (tmp->next != NULL)
-			tmp = tmp->next;
+		tmp = stk_last(*s);
 		tmp->next = new;
 	}
 }
