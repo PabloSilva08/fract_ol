@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:17:38 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/05 17:57:47 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/05 19:23:05 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,8 @@ void	ft_rrr(t_stk **a, t_stk **b);
 
 void	stack_sort(t_stk **a, t_stk **b, t_arg *arg);
 void	three_sort_1(t_stk **s);
+
+
+
+void	print_stk(t_stk *s); // tirar essa merda
 #endif
