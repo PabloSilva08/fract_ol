@@ -1,6 +1,6 @@
 SRCS	=	main.c validation_push_1.c validation_push_2.c error_push.c\
 			push_swap.c stack_1.c movement_swap.c movement_push.c\
-			movement_rotate.c movement_rotate_reverse.c
+			movement_rotate.c movement_rotate_reverse.c stack_sort.c
 PREFD	=	$(addprefix ./obj/, $(SRCS))
 OBJF	=	$(PREFD:.c=.o)
 SRCPATH	=	./src/
