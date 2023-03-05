@@ -6,13 +6,13 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:34:39 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/04 19:51:12 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/05 14:05:39 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-static t_stk *creating_stk(t_stk *a, t_arg *arg)
+static t_stk	*creating_stk(t_stk *a, t_arg *arg)
 {
 	t_stk			*tmp;
 	unsigned int	i;
@@ -55,28 +55,9 @@ static	void	indexing_stk(t_stk **a, t_arg *arg)
 	}
 }
 
-void	push_swap(t_arg *arg)
-{
-	t_stk	*a;
-	t_stk	*b;
-
-	a = NULL;
-	b = NULL;
-	a = creating_stk(a, arg);
-	indexing_stk(&a, arg);
-	ft_sa(&a);
-	ft_sa(&b);
-
-
-
-
-
-
-
-
-
-
 //-------------------------Bloco de teste--------------------------------
+void print_stk(t_stk *a)
+{
 	ft_printf("\n-------------------------------------\n");
 	int	i = 0;
 	while (a != NULL)
@@ -89,6 +70,32 @@ void	push_swap(t_arg *arg)
 		ft_printf("-------------------------------------\n\n");
 		a = a->next;
 	}
+}
 //-------------------------Bloco de teste--------------------------------
 
+void	push_swap(t_arg *arg)
+{
+	t_stk	*a;
+	t_stk	*b;
+
+	a = NULL;
+	b = NULL;
+	a = creating_stk(a, arg);
+	indexing_stk(&a, arg);
+//	stack_sort(&a, &b, arg);
+
+//-----------------------Bloco de teste---------------------------------
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_printf("\nstk a");
+	print_stk(a);
+	ft_printf("\nstk b");
+	print_stk(b);
+	ft_rrr(&a, &b);
+	ft_printf("\nstk a");
+	print_stk(a);
+	ft_printf("\nstk b");
+	print_stk(b);
+//-----------------------Bloco de teste---------------------------------
 }

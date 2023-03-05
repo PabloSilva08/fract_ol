@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:17:38 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/04 19:47:45 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/05 14:02:32 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ typedef struct s_stk
 {
 	int				number;
 	int				index;
-	struct	s_stk	*next;
-}				t_stk;
+	struct s_stk	*next;
+}	t_stk;
 
 typedef struct s_arg
 {
 	char			*union_arg;
 	char			**split_arg;
 	unsigned int	argc_n;
-}				t_arg;
+}	t_arg;
 
 t_arg	validation_push(int argc, char **argv);
 void	something_arg_error(int er);
@@ -44,4 +44,12 @@ void	ft_sa(t_stk **a);
 void	ft_sb(t_stk **b);
 void	ft_ss(t_stk **a, t_stk **b);
 int		stk_size(t_stk *s);
+void	ft_pb(t_stk **a, t_stk **b);
+void	ft_pa(t_stk **b, t_stk **a);
+void	ft_ra(t_stk **a);
+void	ft_rb(t_stk **b);
+void	ft_rr(t_stk **a, t_stk **b);
+void	ft_rra(t_stk **a);
+void	ft_rrb(t_stk **b);
+void	ft_rrr(t_stk **a, t_stk **b);
 #endif

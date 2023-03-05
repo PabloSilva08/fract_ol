@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:42:19 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/04 19:47:07 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/05 10:42:09 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ t_stk	*new_node(int number)
 
 	node = malloc(sizeof(t_stk));
 	if (!node)
-		return(NULL);
+		return (NULL);
 	node->number = number;
 	node->index = 0;
 	node->next = NULL;
 	return (node);
 }
 
-t_stk *stk_last(t_stk *s)
+t_stk	*stk_last(t_stk *s)
 {
 	if (s == NULL)
 		return (NULL);
