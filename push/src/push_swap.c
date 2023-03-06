@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:34:39 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/05 17:16:29 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:54:32 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void print_stk(t_stk *a)
 		ft_printf("a->number = %d\n", a->number);
 		ft_printf("a->index = %d\n", a->index);
 		ft_printf("a->next = %p\n", a->next);
+		ft_printf("a->prev = %p\n", a->prev);
 		ft_printf("-------------------------------------\n\n");
 		a = a->next;
 	}
@@ -85,13 +86,19 @@ void	push_swap(t_arg *arg)
 	stack_sort(&a, &b, arg);
 
 //-----------------------Bloco de teste---------------------------------
-//	ft_pb(&a, &b);
-//	ft_pb(&a, &b);
-//	ft_pb(&a, &b);
-//	ft_printf("\nstk a");
-//	print_stk(a);
-//	ft_printf("\nstk b");
-//	print_stk(b);
+	//ft_printf("\nstk a");
+	//print_stk(a);
+	//ft_sa(&a);
+	//ft_printf("\nstk a");
+	//print_stk(a);
+	//ft_printf("\nstk b");
+	//print_stk(b);
+	//ft_pa(&a, &b);
+	//ft_pa(&a, &b);
+	//ft_printf("\nstk a");
+	//print_stk(a);
+	//ft_printf("\nstk b");
+	//print_stk(b);
 //	ft_rrr(&a, &b);
 //	ft_printf("\nstk a");
 //	print_stk(a);

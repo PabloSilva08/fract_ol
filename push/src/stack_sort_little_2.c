@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_sort.c                                       :+:      :+:    :+:   */
+/*   stack_sort_little_2.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/05 14:00:16 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/06 13:49:10 by pvieira-         ###   ########.fr       */
+/*   Created: 2023/03/06 14:36:20 by pvieira-          #+#    #+#             */
+/*   Updated: 2023/03/06 14:42:09 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-void	stack_sort(t_stk **a, t_stk **b, t_arg *arg)
+void	five_sort_1(t_stk **a, t_stk **b)
 {
-	if (arg->argc_n < 6)
-		little_sort( a, b, arg);
+	t_stk	*tmp;
+	int		count_r;
+	int		*index_0;
+	int		*index_1;
+
+	count_r = 0;
+	tmp = *a;
+
+	
 }

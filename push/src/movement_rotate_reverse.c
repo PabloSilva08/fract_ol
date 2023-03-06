@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 10:45:23 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/05 13:33:32 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:01:35 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 static void	rotate_reverse_stk(t_stk **s)
 {
-	t_stk	*tmp_1;
-	t_stk	*tmp_2;
+	t_stk	*tmp;
 
-	tmp_1 = stk_last(*s);
-	tmp_2 = *s;
-	while (tmp_2->next->next)
-		tmp_2 = tmp_2->next;
-	tmp_1->next = *s;
-	*s = tmp_1;
-	tmp_2->next = NULL;
+	tmp = stk_last(*s);
+	tmp->next = *s;
+	tmp->prev->next = NULL;
+	tmp->next->prev = tmp;
+	tmp->prev = NULL;
+	*s = tmp;
 }
 
 void ft_rra(t_stk **a)

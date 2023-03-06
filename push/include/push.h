@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:17:38 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/05 19:23:05 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/06 14:38:25 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_stk
 	int				number;
 	int				index;
 	struct s_stk	*next;
+	struct s_stk	*prev;
 }	t_stk;
 
 typedef struct s_arg
@@ -81,7 +82,13 @@ void	ft_rrr(t_stk **a, t_stk **b);
 void	stack_sort(t_stk **a, t_stk **b, t_arg *arg);
 void	three_sort_1(t_stk **s);
 
+// -----------stack_sort_little_1.c-----------------
 
+void	little_sort(t_stk **a, t_stk **b, t_arg *arg);
+
+// -----------stack_sort_little_2.c-----------------
+
+void	five_sort_1(t_stk **a, t_stk **b);
 
 void	print_stk(t_stk *s); // tirar essa merda
 #endif
