@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 12:38:43 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/06 11:22:22 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:08:06 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,28 @@
 static void	swap_stk(t_stk **s)
 {
 	t_stk	*tmp;
+	int		count_no;
 
-	tmp = (*s)->next;
-	(*s)->next->next->prev = (*s);
-	(*s)->next = (*s)->next->next;
-	tmp->next = (*s);
-	(*s)->prev = tmp;
-	tmp->prev = NULL;
-	(*s) = tmp;
+	count_no = stk_size(*s);
+	if ( count_no  == 2)
+	{
+		tmp = stk_last(*s);
+		tmp->next = *s;
+		*s = (*s)->next;
+		(*s)->prev = NULL;
+		tmp->next->prev = tmp;
+		tmp->next->next = NULL;
+	}
+	else
+	{
+		tmp = (*s)->next;
+		(*s)->next->next->prev = (*s);
+		(*s)->next = (*s)->next->next;
+		tmp->next = (*s);
+		(*s)->prev = tmp;
+		tmp->prev = NULL;
+		(*s) = tmp;
+	}
 }
 
 void	ft_sa(t_stk **a)

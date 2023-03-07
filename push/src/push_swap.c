@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:34:39 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/06 11:54:32 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:08:24 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,40 @@ static	void	indexing_stk(t_stk **a, t_arg *arg)
 	}
 }
 
+
+void	push_swap(t_arg *arg)
+{
+	t_stk	*a;
+	t_stk	*b;
+
+	a = NULL;
+	b = NULL;
+	a = creating_stk(a, arg);
+	indexing_stk(&a, arg);
+	stack_sort(&a, &b, arg);
+
+//-----------------------Bloco de teste---------------------------------
+	ft_printf("\nstk a");
+	print_stk(a);
+	ft_sa(&a);
+	ft_printf("\nstk a");
+	print_stk(a);
+	ft_printf("\nstk b");
+	print_stk(b);
+	//ft_pa(&a, &b);
+	//ft_pa(&a, &b);
+	//ft_printf("\nstk a");
+	//print_stk(a);
+	//ft_printf("\nstk b");
+	//print_stk(b);
+//	ft_rrr(&a, &b);
+//	ft_printf("\nstk a");
+//	print_stk(a);
+//	ft_printf("\nstk b");
+//	print_stk(b);
+//-----------------------Bloco de teste---------------------------------
+}
+
 //-------------------------Bloco de teste--------------------------------
 void print_stk(t_stk *a)
 {
@@ -73,36 +107,3 @@ void print_stk(t_stk *a)
 	}
 }
 //-------------------------Bloco de teste--------------------------------
-
-void	push_swap(t_arg *arg)
-{
-	t_stk	*a;
-	t_stk	*b;
-
-	a = NULL;
-	b = NULL;
-	a = creating_stk(a, arg);
-	indexing_stk(&a, arg);
-	stack_sort(&a, &b, arg);
-
-//-----------------------Bloco de teste---------------------------------
-	//ft_printf("\nstk a");
-	//print_stk(a);
-	//ft_sa(&a);
-	//ft_printf("\nstk a");
-	//print_stk(a);
-	//ft_printf("\nstk b");
-	//print_stk(b);
-	//ft_pa(&a, &b);
-	//ft_pa(&a, &b);
-	//ft_printf("\nstk a");
-	//print_stk(a);
-	//ft_printf("\nstk b");
-	//print_stk(b);
-//	ft_rrr(&a, &b);
-//	ft_printf("\nstk a");
-//	print_stk(a);
-//	ft_printf("\nstk b");
-//	print_stk(b);
-//-----------------------Bloco de teste---------------------------------
-}

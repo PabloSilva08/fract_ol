@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 08:55:04 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/06 11:29:19 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/07 10:10:50 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	rotate_stk(t_stk **s)
 	tmp->next = *s;
 	*s = (*s)->next;
 	(*s)->prev = NULL;
-	tmp->next->prev = tmp->next;
+	tmp->next->prev = tmp;
 	tmp->next->next = NULL;
 }
 

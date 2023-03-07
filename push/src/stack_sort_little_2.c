@@ -6,47 +6,71 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:36:20 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/06 15:50:46 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/07 10:35:20 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 	
-static void	search_little_index(int *index_0, int *index_1, t_stk **a)
+static int	search_little_index(t_stk **s)
 {
 	t_stk	*tmp;
-	int		count_tmp;
+	int		count_r;
+	int		count_rr;
 
-	count_tmp = 0;
-	tmp = *a;
-	while (tmp->index != 0)
+	count_r = 0;
+	count_rr = 1;
+	tmp = *s;
+	while (tmp->index != 0 && tmp->index != 1 && tmp->next != NULL)
 	{
 		tmp = tmp->next;
-		count_tmp++;
+		count_r++;
 	}
-	*index_0 = count_tmp;
-	count_tmp = 0;
-	tmp = *a;
-	while (tmp->index != 1)
+	tmp = stk_last(*s);
+	while (tmp->index != 0 && tmp->index != 1 && tmp->prev != NULL)
 	{
-		tmp = tmp->next;
-		count_tmp++;
+		tmp = tmp->prev;
+		count_rr++;
 	}
-	*index_1 = count_tmp;
-//	if (*index_0 > *index_1)
-//		*index_0 = *index_0 - *index_1;
-//	else
-//		*index_1 = *index_1 - *index_0;
+	if (count_r <= count_rr)
+		return (0);
+	else
+		return (1);
+}
+
+static void	routine_for_ra_pb(t_stk **a, t_stk **b)
+{
+	while ((*a)->index != 0 && (*a)->index != 1)
+		ft_ra(a);
+	ft_pb(a, b);
+}
+
+static void	routine_for_rra_pb(t_stk **a, t_stk **b)
+{
+	while ((*a)->index != 0 && (*a)->index != 1)
+		ft_rra(a);
+	ft_pb(a, b);
 }
 
 void	five_sort_1(t_stk **a, t_stk **b)
 {
-	int		count_index_0;
-	int		count_index_1;
+	int	flag_rotate;
 
-	count_index_0 = 0;
-	count_index_1 = 0;
-	search_little_index(&count_index_0, &count_index_1, a);
-	ft_printf("i_0 = %d\ni_1 = %d\n", count_index_0, count_index_1);
-	ft_pa(b, a);
+	flag_rotate = search_little_index(a);
+	if (flag_rotate == 0)
+		routine_for_ra_pb(a, b);
+	else
+		routine_for_rra_pb(a, b);
+	flag_rotate = search_little_index(a);
+	if (flag_rotate == 0)
+		routine_for_ra_pb(a, b);
+	else
+		routine_for_rra_pb(a, b);
+
+//	ft_printf("flag = %d\n", flag_rotate);
+//	ft_printf("L = a\n");
+//	print_stk(*a);
+////	ft_printf("flag = %d\n", flag_rotate);
+//	ft_printf("L = b\n");
+//	print_stk(*b);
 }
