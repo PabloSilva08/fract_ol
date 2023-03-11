@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 14:00:16 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/06 14:37:25 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/11 11:58:07 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	four_sort_2(t_stk **a, t_stk *tmp)
 {
 	tmp = stk_last(*a);
-	while (tmp->index != 0)
+	while (tmp->index != 1)
 	{
 		tmp = tmp->prev;
 		ft_rra(a);
@@ -30,7 +30,7 @@ static void	four_sort_1(t_stk **a, t_stk **b)
 
 	count_r = 0;
 	tmp = *a;
-	while (tmp->index != 0)
+	while (tmp->index != 1)
 	{
 		tmp = tmp->next;
 		count_r++;
@@ -38,7 +38,7 @@ static void	four_sort_1(t_stk **a, t_stk **b)
 	tmp = *a;
 	if (count_r <= 1)
 	{
-		while (tmp->index != 0)
+		while (tmp->index != 1)
 		{
 			tmp = tmp->next;
 			ft_ra(a);

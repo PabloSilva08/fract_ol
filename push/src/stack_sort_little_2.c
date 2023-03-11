@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:36:20 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/07 10:35:20 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/11 13:22:39 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ static int	search_little_index(t_stk **s)
 	count_r = 0;
 	count_rr = 1;
 	tmp = *s;
-	while (tmp->index != 0 && tmp->index != 1 && tmp->next != NULL)
+	while (tmp->index != 1 && tmp->index != 2 && tmp->next != NULL)
 	{
 		tmp = tmp->next;
 		count_r++;
 	}
 	tmp = stk_last(*s);
-	while (tmp->index != 0 && tmp->index != 1 && tmp->prev != NULL)
+	while (tmp->index != 1 && tmp->index != 2 && tmp->prev != NULL)
 	{
 		tmp = tmp->prev;
 		count_rr++;
@@ -40,14 +40,14 @@ static int	search_little_index(t_stk **s)
 
 static void	routine_for_ra_pb(t_stk **a, t_stk **b)
 {
-	while ((*a)->index != 0 && (*a)->index != 1)
+	while ((*a)->index != 1 && (*a)->index != 2)
 		ft_ra(a);
 	ft_pb(a, b);
 }
 
 static void	routine_for_rra_pb(t_stk **a, t_stk **b)
 {
-	while ((*a)->index != 0 && (*a)->index != 1)
+	while ((*a)->index != 1 && (*a)->index != 2)
 		ft_rra(a);
 	ft_pb(a, b);
 }
@@ -66,11 +66,9 @@ void	five_sort_1(t_stk **a, t_stk **b)
 		routine_for_ra_pb(a, b);
 	else
 		routine_for_rra_pb(a, b);
-
-//	ft_printf("flag = %d\n", flag_rotate);
-//	ft_printf("L = a\n");
-//	print_stk(*a);
-////	ft_printf("flag = %d\n", flag_rotate);
-//	ft_printf("L = b\n");
-//	print_stk(*b);
+	if ((*b)->index < (*b)->next->index)
+		ft_sb(b);
+	three_sort_1(a);
+	ft_pa(b, a);
+	ft_pa(b, a);
 }

@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:42:19 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/06 10:46:43 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/11 09:28:09 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_stk	*new_node(int number)
 	if (!node)
 		return (NULL);
 	node->number = number;
-	node->index = 0;
+	node->index = 1;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);

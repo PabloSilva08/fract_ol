@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:17:38 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/06 14:38:25 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/11 16:45:19 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	checking_repeat(int *lst, unsigned int argc_n);
 
 void	push_swap(t_arg *arg);
 int		ft_atoli(const char *str);
+int		validation_order(t_stk **s, t_arg *arg);
 
 // -----------stack_1.c-------------------
 
