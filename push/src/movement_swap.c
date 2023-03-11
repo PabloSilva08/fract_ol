@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 12:38:43 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/07 11:08:06 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:30:18 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	swap_stk(t_stk **s)
 	int		count_no;
 
 	count_no = stk_size(*s);
-	if ( count_no  == 2)
+	if (count_no == 2)
 	{
 		tmp = stk_last(*s);
 		tmp->next = *s;

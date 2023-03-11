@@ -6,12 +6,12 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:36:20 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/11 13:22:39 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:35:01 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
-	
+
 static int	search_little_index(t_stk **s)
 {
 	t_stk	*tmp;

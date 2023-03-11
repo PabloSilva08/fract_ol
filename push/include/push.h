@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:17:38 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/11 16:45:19 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:34:17 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_arg
 // -----------validation_push_1.c-----------
 
 t_arg	validation_push(int argc, char **argv);
+void	free_stack(t_stk *stack);
+void	free_split(char **lst);
 
 // -----------error_push.c-----------------
 
@@ -90,6 +92,4 @@ void	little_sort(t_stk **a, t_stk **b, t_arg *arg);
 // -----------stack_sort_little_2.c-----------------
 
 void	five_sort_1(t_stk **a, t_stk **b);
-
-void	print_stk(t_stk *s); // tirar essa merda
 #endif

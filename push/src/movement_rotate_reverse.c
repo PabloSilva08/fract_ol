@@ -6,7 +6,7 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 10:45:23 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/07 09:34:13 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:28:42 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	rotate_reverse_stk(t_stk **s)
 	*s = tmp;
 }
 
-void ft_rra(t_stk **a)
+void	ft_rra(t_stk **a)
 {
 	int	count;
 
@@ -36,7 +36,7 @@ void ft_rra(t_stk **a)
 	}
 }
 
-void ft_rrb(t_stk **b)
+void	ft_rrb(t_stk **b)
 {
 	int	count;
 
@@ -48,7 +48,7 @@ void ft_rrb(t_stk **b)
 	}
 }
 
-void ft_rrr(t_stk **a, t_stk **b)
+void	ft_rrr(t_stk **a, t_stk **b)
 {
 	int	count_a;
 	int	count_b;

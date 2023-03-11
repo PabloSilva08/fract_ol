@@ -6,11 +6,23 @@
 /*   By: pvieira- <pvieira-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:34:39 by pvieira-          #+#    #+#             */
-/*   Updated: 2023/03/11 16:43:31 by pvieira-         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:34:57 by pvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
+
+void	free_stack(t_stk *stack)
+{
+	t_stk	*p;
+
+	while (stack)
+	{
+		p = stack->next;
+		free(stack);
+		stack = p;
+	}
+}
 
 static t_stk	*creating_stk(t_stk *a, t_arg *arg)
 {
@@ -57,8 +69,8 @@ static	void	indexing_stk(t_stk **a, t_arg *arg)
 
 int	validation_order(t_stk **a, t_arg *arg)
 {
-	t_stk *tmp;
-	unsigned int count;
+	t_stk			*tmp;
+	unsigned int	count;
 
 	tmp = *a;
 	count = 1;
@@ -85,48 +97,12 @@ void	push_swap(t_arg *arg)
 	indexing_stk(&a, arg);
 	validation = validation_order(&a, arg);
 	if (validation == 0)
-		exit (0);
-	ft_printf("\nstk a"); // tirar essa merda
-	print_stk(a); // tirar essa merda
-	stack_sort(&a, &b, arg);
-
-//-----------------------Bloco de teste---------------------------------
-	ft_printf("\nstk a"); // tirar essa merda
-	print_stk(a); 
-//	ft_sa(&a);
-//	ft_printf("\nstk a");
-//	print_stk(a);
-	ft_printf("\nstk b");
-	print_stk(b);
-	//ft_pa(&a, &b);
-	//ft_pa(&a, &b);
-	//ft_printf("\nstk a");
-	//print_stk(a);
-	//ft_printf("\nstk b");
-	//print_stk(b);
-//	ft_rrr(&a, &b);
-//	ft_printf("\nstk a");
-//	print_stk(a);
-//	ft_printf("\nstk b");
-//	print_stk(b);
-//-----------------------Bloco de teste---------------------------------
-}
-
-//-------------------------Bloco de teste--------------------------------
-void print_stk(t_stk *a)
-{
-	ft_printf("\n-------------------------------------\n");
-	int	i = 0;
-	while (a != NULL)
 	{
-		//ft_printf("a->number = %d\n", a->number);
-		ft_printf("%p Node[%i]\n", &a->number, i++);
-		ft_printf("a->number = %d\n", a->number);
-		ft_printf("a->index = %d\n", a->index);
-		ft_printf("a->next = %p\n", a->next);
-		ft_printf("a->prev = %p\n", a->prev);
-		ft_printf("-------------------------------------\n\n");
-		a = a->next;
+		free_stack(a);
+		free_stack(b);
+		exit (0);
 	}
+	stack_sort(&a, &b, arg);
+	free_stack(a);
+	free_stack(b);
 }
-//-------------------------Bloco de teste--------------------------------
